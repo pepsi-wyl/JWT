@@ -1,0 +1,24 @@
+server:
+  port: 8888
+  servlet:
+    context-path: /
+
+spring:
+  # ???????
+  datasource:
+    username: root
+    password: bsy8023.00
+    url: jdbc:mysql://localhost:3306/jwt?useSSL=true&useUnicode=true&characterEncoding=utf8&serverTimezone=UTC&rewriteBatchedStatements=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # druid ??????
+    type: com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceWrapper
+
+# mybatis-plus ??
+mybatis-plus:
+  configuration:
+    # ??????
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  # ?????
+  type-aliases-package: com.pepsiwyl.pojo
+  # mapper??
+  mapper-locations: classpath*:/mapper/**/*.xml
